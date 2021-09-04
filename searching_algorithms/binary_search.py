@@ -141,4 +141,76 @@ def test_infinite_array():
     return infinite_array(array, start, end, target)
 
 
-print(test_infinite_array())
+# print(test_infinite_array())
+
+
+"""
+Peak Index in a Mountain Array
+condition len(arr) > 3
+e.x:- 
+arr = [0, 3, 1, 0]
+here the peak is 3
+>>> index(3) = 1 would be the answer
+"""
+
+
+def peak_in_mountain_array(array: List):
+    start, end = 0, len(array)-1
+    _max = -1
+    while start <= end:
+        mid = start + (end-start) // 2
+        if array[mid] > array[mid+1] and array[mid] > _max:
+            _max = array[mid]
+            end = mid - 1
+        elif array[mid + 1] > array[mid] > _max:
+            _max = array[mid+1]
+            start = mid + 1
+
+        else:
+            return _max
+
+    return _max
+
+
+def test_for_peak_in_mountain():
+    assert peak_in_mountain_array([1, 2, 3, 5, 6, 4, 3, 2]) == 6
+    assert peak_in_mountain_array([1, 2, 3, 6, 4, 3, 2]) == 6
+    assert peak_in_mountain_array([0, 1, 4, 1, 0]) == 4
+    assert peak_in_mountain_array([10, 9, 8, 7]) == 10
+
+
+# test_for_peak_in_mountain()
+
+
+"""
+Find in Mountain Array
+Given a mountain array mountain_array, return the minimum index such that mountain_array[index] == target, else return -1
+
+
+def min_index_mount_arr(array: List, target: int, start: int, end: int) -> int:
+    while start <= end:
+        mid = start + (end-start) // 2
+        print(mid, array[mid])
+        if array[mid] > target:
+            end = mid - 1
+        elif array[mid] < target:
+            start = mid + 1
+        else:
+            return mid
+
+    return -1
+
+
+def test_min_index_mount_arr():
+    array = [([1, 5, 2], 2), ([1,2,3,4,5,3,1],3), ([1,2,3,4,5,3,1],5), ([0,5,3,1], 1)]
+    for _array, target in array:
+        peak_index = _array.index(peak_in_mountain_array(_array))
+        min_index = min_index_mount_arr(_array, target, 0, peak_index)
+        if min_index < 0:
+            min_index = min_index_mount_arr(_array, target, peak_index+1, len(_array)-1)
+
+        print(min_index)
+
+
+test_min_index_mount_arr()
+"""
