@@ -37,10 +37,10 @@ def sorted_matrix(matrix: List[List[int]], target: int) -> int:
     if len(matrix) == 0:
         return -1
     m,n = len(matrix), len(matrix[0])
-    left, right = 0, m*n-1
+    left, right = 0, m*n-1  # convert the matrix into 1D array.
     while left <= right:
         mid = (left+right)//2
-        r, c = mid//n, mid % n
+        r, c = mid//n, mid % n  # get the position of middle elements in terms of row and column
         if matrix[r][c] == target:
             return r, c
         if matrix[r][c] < target:
