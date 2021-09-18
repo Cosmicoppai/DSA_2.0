@@ -2,10 +2,12 @@
 
 | Algorithms    |
 | ------------- |
-|[Searching](searching_algorithms)|
-| [sorting](sorting_algorithms)     |
+| [Sorting](sorting_algorithms)     |
 | [Recursion](Recursion)            |
+|[Searching](searching_algorithms)|
 | [Pattern Searching](pattern_searching)            |
+| [Permutations and Combinations](permutation_combination)            |
+
 
 
 
