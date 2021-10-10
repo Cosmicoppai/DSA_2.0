@@ -1,0 +1,15 @@
+# XOR
+
+-> a ^ 1 gives a complement (xor with 1 gives the complement of that number)
+-> a ^ 0 gives 'a' itself   (xor with 0 gives that number with itself)
+-> a ^ a gives 0    (xor of same number gives 0)
+
+# Left shift operator (<<)
+
+-> It shifts the bit toward the left
+-> Left shift by 1 doubles the number   (a << 1 = 2a | a << b = a * 2**b)
+
+# Right Shift (>>)
+
+-> It shifts the bit towards the right
+-> Right shift by 1 divides the number by 2 (a >> 1 = a//2 | a >> b = a // (2**b))
