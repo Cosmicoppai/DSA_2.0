@@ -16,20 +16,21 @@ def quick_sort(arr: List[int], start: int, end: int) -> List[int]:
 
 
 def partition(arr: List[int], start: int, end: int) -> int:
-    i = start - 1
+    i = start
     pi_elem = arr[end]
     for j in range(start, end):
         if arr[j] <= pi_elem:
-            i += 1
             arr[i], arr[j] = arr[j], arr[i]
-    arr[i+1], arr[end] = arr[end], arr[i+1]
-    return i+1
+            i += 1  ## increase the index
+    arr[i], arr[end] = arr[end], arr[i]
+    return i
 
 
 if __name__ == "__main__":
     assert quick_sort([5, 4, 3, 2, 1, 0], 0, 5) == [0, 1, 2, 3, 4, 5]
     assert quick_sort([5, 4, 3, 2, 0, -1, -3, 1], 0, 7) == [-3, -1, 0, 1, 2, 3, 4, 5]
     assert quick_sort([1], 0, 0) == [1]
+    assert quick_sort([0,4,3,6,2,5],0,5) == [0,2,3,4,5,6]
 
 
 """
