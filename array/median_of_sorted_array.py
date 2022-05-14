@@ -63,7 +63,7 @@ def findMedianSortedArrays(nums1: List[int], nums2: List[int]) -> float:
 
 
 """
-ef findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         completed_array = nums1 + nums2
         completed_array.sort()
         
