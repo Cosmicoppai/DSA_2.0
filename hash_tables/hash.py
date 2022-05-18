@@ -108,8 +108,8 @@ if __name__ == "__main__":
     print(len(hash_table))
     print(1 in hash_table)
 
-    for key in hash_table:
-        print(key)
+    for _key in hash_table:
+        print(_key)
 
     hash_table[4] = "tsubasa"
     print(len(hash_table))
